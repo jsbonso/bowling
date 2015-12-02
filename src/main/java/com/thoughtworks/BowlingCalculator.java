@@ -4,25 +4,26 @@ package com.thoughtworks;
  * Created by yongliuli on 15/12/2.
  */
 public class BowlingCalculator {
-    private int[]  stringToArray(String numbersString){
-        String[] splitedStrs=numbersString.split("\\s+");
-        int[] numbers=new int[splitedStrs.length];
-        for(int i=0;i<splitedStrs.length;i++){
-            numbers[i]=Integer.parseInt(splitedStrs[i]);
+    private int[] stringToArray(String numbersString) {
+        String[] splitedStrs = numbersString.split("\\s+");
+        int[] numbers = new int[splitedStrs.length];
+        for (int i = 0; i < splitedStrs.length; i++) {
+            numbers[i] = Integer.parseInt(splitedStrs[i]);
         }
         return numbers;
 
     }
 
 
-    public void preCheck(int[] throwHits){
-        for(int i=0;i<throwHits.length;i++){
-            if(throwHits[i]>10||throwHits[i]<0){
+    public void preCheck(int[] throwHits) {
+        for (int i = 0; i < throwHits.length; i++) {
+            if (throwHits[i] > 10 || throwHits[i] < 0) {
                 throw new RuntimeException("illegal hit points!");
             }
         }
     }
-    public int bowlingScore(String bowlingScore){
+
+    public int bowlingScore(String bowlingScore) {
         return bowlingScore(stringToArray(bowlingScore));
     }
 
@@ -35,7 +36,7 @@ public class BowlingCalculator {
             if (thisThrowHits < 10) {
 
                 int thisRound = thisThrowHits + throwsHits[index + 1];
-                if(thisRound>10){
+                if (thisRound > 10) {
                     throw new RuntimeException("illegal hit points!");
                 }
                 sum += thisRound;
