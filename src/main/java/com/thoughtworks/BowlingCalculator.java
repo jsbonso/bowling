@@ -55,6 +55,8 @@ public class BowlingCalculator {
                     sum += throwsHits[index + 2];
                 }
                 index += 1;
+            }else{
+                throw new RuntimeException("illegal hit points!");
             }
             if (index >= 10) {
                 break;

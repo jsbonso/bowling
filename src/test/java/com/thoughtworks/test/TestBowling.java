@@ -11,6 +11,8 @@ public class TestBowling {
 
     @Test
     public void test_caculate_with_array() {
+        String str;
+
 
         int[] input1 = new int[]{1, 2, 3, 4};
         int[] input2 = new int[]{9, 1, 9, 1};
